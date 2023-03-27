@@ -50,7 +50,7 @@ function validarUsuario(usersDb, user, pass) {
     }
 }
 
-function guardarDatos (usuarioDB, storage){
+function guardarDatos(usuarioDB, storage) {
     const usuario = {
         'name': usuarioDB.nombre,
         'user': usuarioDB.mail,
@@ -60,9 +60,13 @@ function guardarDatos (usuarioDB, storage){
     storage.setItem('usuario', JSON.stringify(usuario));
 }
 
-function recuperarUsuario(storage){
+function recuperarUsuario(storage) {
     let usuarioEnStorage = JSON.parse(storage.getItem('usuario'));
     return usuarioEnStorage;
+}
+
+function saludar(usuario) {
+    nombreusuario.innerHtml = 'Bienvenido/a, <span>${usuario.name}</span>'
 }
 
 numeroDeCuotas(seleccioneProducto)
@@ -109,4 +113,26 @@ function numeroDeCuotas(producto, resultado,) {
     }
 }
 
+btnLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (!mailLogin.value || !passLogin.value) {
+        alert('Todos los campos son requeridos');
+    } else {
+        let data = validarUsuario(usuarios, mailLogin.value, passLogin.value);
+        if (!data) {
+            alert('Usuario y/o contraseña erroneos')
+        } else {
+
+            if (recordar.checked) {
+                guardarDatos(data, localStorage);
+                saludar(recuperarUsuario(localStorage));
+            } else {
+                guardarDatos(data, sessionStorage);
+                saludar(recuperarUsuario(sessionStorage));
+            }
+        }
+    }
+
+})
 alert('Muchas gracias por haber realizado la compra')
