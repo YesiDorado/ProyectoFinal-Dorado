@@ -1,3 +1,5 @@
+const shopContent = document.getElementById("shopContent")
+
 const mailLogin = document.getElementById('emailLogin'),
     passLogin = document.getElementById('passwordLogin'),
     recordar = document.getElementById('recordarme'),
@@ -45,38 +47,47 @@ const productos = [
     {
         nombre: "Rascador para gato",
         precio: 15000,
-        img: "rascador.png",
+        img: "/img/rascador.png",
     },
     {
         nombre: "bolsa Pro Plan",
         precio: 8900,
-        img: "bolsaproplan.jpg",
+        img: "/img/bolsaproplan.jpg",
     },
     {
         nombre: "Juguete",
         precio: 5000,
-        img: "juguete.jpg",
+        img: "/img/juguete.jpg",
     },
     {
         nombre: "Pelota",
         precio: 500,
-        img: "pelota.jpg",
+        img: "/img/pelota.jpg",
     },
     {
         nombre: "Plato",
         precio: 600,
-        img: "plato.jpg",
+        img: "/img/plato.jpg",
     }
 ];
 
-let carrito = []
-
+let carrito = [];
 
 productos.forEach((product) => {
-    let content = document.createElement ("div");
-    
-}
-)
+    let content = document.createElement("div");
+    content.innerHTML = `
+    <img src="${product.img}">
+    <h3>${product.nombre}</h3>
+    <p>${product.precio} $</p>
+`;
+
+    shopContent.append(content);
+
+    let comprar = document.createElement("button")
+    comprar.innerText = "comprar";
+
+    content.append(comprar);
+});
 
 numeroDeCuotas(seleccioneProducto)
 

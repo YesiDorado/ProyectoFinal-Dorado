@@ -1,28 +1,29 @@
-body{
+body {
     margin: 0px;
 }
 
 /*navbar*/
-.nav-container{
+.nav-container {
     position: sticky;
     z-index: 3;
     top: 0;
 }
-.navbar{
+
+.navbar {
     display: flex;
     justify-content: space-between;
     height: 100px;
     background-color: #dfa425;
 }
 
-.navbar-logo{
+.navbar-logo {
     justify-self: start;
     color: #fff;
     margin: 10px;
     cursor: pointer;
 }
 
-.ver-carrito{
+.ver-carrito {
     font-size: 25px;
     margin-right: 20px;
     margin: 3.5vh;
@@ -30,19 +31,19 @@ body{
 }
 
 /*banner style*/
-.banner{
+.banner {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0, 0.4),rgba(0, 0, 0, 0.4)), url("/img/zeke-tucker-gSSK4u8yPpM-unsplash.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/img/zeke-tucker-gSSK4u8yPpM-unsplash.jpg");
 }
 
-.banner-container{
+.banner-container {
     text-align: center;
     padding: 15% 0;
 }
 
-.banner h1{
+.banner h1 {
     margin: 0;
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -50,7 +51,7 @@ body{
     font-weight: bold;
 }
 
-.banner p{
+.banner p {
     font-size: 30px;
     color: white;
     opacity: 0.7;
