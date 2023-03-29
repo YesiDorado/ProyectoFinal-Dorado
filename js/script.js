@@ -1,32 +1,3 @@
-//array con precios de productos
-const productos = [
-    {
-        nombre: "Racador para gato",
-        precio: 15000,
-        img: "./img/",
-    },
-    {
-        nombre: "bolsa Pro Plan",
-        precio: 8900,
-        img: "",
-    },
-    {
-        nombre: "Juguete",
-        precio: 5000,
-        img: "",
-    },
-    {
-        nombre: "Pelota",
-        precio: 500,
-        img: "",
-    },
-    {
-        nombre: "Plato",
-        precio: 600,
-        img: "",
-    }
-]
-
 const mailLogin = document.getElementById('emailLogin'),
     passLogin = document.getElementById('passwordLogin'),
     recordar = document.getElementById('recordarme'),
@@ -68,6 +39,44 @@ function recuperarUsuario(storage) {
 function saludar(usuario) {
     nombreusuario.innerHtml = 'Bienvenido/a, <span>${usuario.name}</span>'
 }
+
+//array con precios de productos
+const productos = [
+    {
+        nombre: "Rascador para gato",
+        precio: 15000,
+        img: "rascador.png",
+    },
+    {
+        nombre: "bolsa Pro Plan",
+        precio: 8900,
+        img: "bolsaproplan.jpg",
+    },
+    {
+        nombre: "Juguete",
+        precio: 5000,
+        img: "juguete.jpg",
+    },
+    {
+        nombre: "Pelota",
+        precio: 500,
+        img: "pelota.jpg",
+    },
+    {
+        nombre: "Plato",
+        precio: 600,
+        img: "plato.jpg",
+    }
+];
+
+let carrito = []
+
+
+productos.forEach((product) => {
+    let content = document.createElement ("div");
+    
+}
+)
 
 numeroDeCuotas(seleccioneProducto)
 
