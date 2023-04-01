@@ -42,49 +42,22 @@ function saludar(usuario) {
     nombreusuario.innerHtml = 'Bienvenido/a, <span>${usuario.name}</span>'
 }
 
-//array con precios de productos
-const productos = [
-    {
-        nombre: "Rascador para gato",
-        precio: 15000,
-        img: "/img/rascador.png",
-    },
-    {
-        nombre: "bolsa Pro Plan",
-        precio: 8900,
-        img: "/img/bolsaproplan.jpg",
-    },
-    {
-        nombre: "Juguete",
-        precio: 5000,
-        img: "/img/juguete.jpg",
-    },
-    {
-        nombre: "Pelota",
-        precio: 500,
-        img: "/img/pelota.jpg",
-    },
-    {
-        nombre: "Plato",
-        precio: 600,
-        img: "/img/plato.jpg",
-    }
-];
-
 let carrito = [];
 
 productos.forEach((product) => {
     let content = document.createElement("div");
+    content.className = "card";
     content.innerHTML = `
     <img src="${product.img}">
     <h3>${product.nombre}</h3>
-    <p>${product.precio} $</p>
+    <p class="price">${product.precio} $</p>
 `;
 
     shopContent.append(content);
 
     let comprar = document.createElement("button")
     comprar.innerText = "comprar";
+    comprar.className = "comprar";
 
     content.append(comprar);
 });
