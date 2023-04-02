@@ -90,8 +90,8 @@ body {
     border: none;
     outline: 0;
     padding: 12px;
-    color: black;
-    background-color: #fff;
+    color: rgb(255, 249, 249);
+    background-color: #535252;
     text-align: center;
     cursor: pointer;
     width: 100%;

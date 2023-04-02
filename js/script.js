@@ -1,4 +1,5 @@
-const shopContent = document.getElementById("shopContent")
+const shopContent = document.getElementById("shopContent");
+const verCarrito = document.getElementById("verCarrito");
 
 const mailLogin = document.getElementById('emailLogin'),
     passLogin = document.getElementById('passwordLogin'),
@@ -42,6 +43,34 @@ function saludar(usuario) {
     nombreusuario.innerHtml = 'Bienvenido/a, <span>${usuario.name}</span>'
 }
 
+const productos = [
+    {
+        nombre: "Rascador para gato",
+        precio: 15000,
+        img: "/img/rascador.png",
+    },
+    {
+        nombre: "bolsa Pro Plan",
+        precio: 8900,
+        img: "/img/bolsaproplan.jpg",
+    },
+    {
+        nombre: "Juguete",
+        precio: 5000,
+        img: "/img/juguete.jpg",
+    },
+    {
+        nombre: "Pelota",
+        precio: 500,
+        img: "/img/pelota.jpg",
+    },
+    {
+        nombre: "Plato",
+        precio: 600,
+        img: "/img/plato.jpg",
+    }
+];
+
 let carrito = [];
 
 productos.forEach((product) => {
@@ -60,9 +89,21 @@ productos.forEach((product) => {
     comprar.className = "comprar";
 
     content.append(comprar);
+
+    comprar.addEventListener("click", () =>{
+        carrito.push({
+            img: product.img,
+            nombre: product.nombre,
+            precio: product.precio,
+        });
+        console.log(carrito);
+    });
 });
 
-numeroDeCuotas(seleccioneProducto)
+verCarrito.addEventListener("click", () => {
+    console.log("Hola funciona");
+});
+/*numeroDeCuotas(seleccioneProducto)
 
 function numeroDeCuotas(producto, resultado,) {
     let numeroIngresado = parseInt(prompt("Tenemos 3 a 6 cuotas sin interes"))
@@ -128,4 +169,4 @@ btnLogin.addEventListener('click', (e) => {
     }
 
 })
-alert('Muchas gracias por haber realizado la compra')
+alert('Muchas gracias por haber realizado la compra')*/
