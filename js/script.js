@@ -45,33 +45,7 @@ function saludar(usuario) {
     nombreusuario.innerHtml = 'Bienvenido/a, <span>${usuario.name}</span>'
 }
 
-const productos = [
-    {
-        nombre: "Rascador para gato",
-        precio: 15000,
-        img: "/img/rascador.png",
-    },
-    {
-        nombre: "bolsa Pro Plan",
-        precio: 8900,
-        img: "/img/bolsaproplan.jpg",
-    },
-    {
-        nombre: "Juguete",
-        precio: 5000,
-        img: "/img/juguete.jpg",
-    },
-    {
-        nombre: "Pelota",
-        precio: 500,
-        img: "/img/pelota.jpg",
-    },
-    {
-        nombre: "Plato",
-        precio: 600,
-        img: "/img/plato.jpg",
-    }
-];
+
 
 let carrito = [];
 
@@ -100,46 +74,6 @@ productos.forEach((product) => {
         });
         console.log(carrito);
     });
-});
-
-verCarrito.addEventListener("click", () => {
-    modalContainer.innerHTML = "";
-    modalContainer.style.display = "flex";
-    const modalHeader = document.createElement("div");
-    modalHeader.className = "modal-header"
-    modalHeader.innerHTML = `
-        <h1 class="modal-header-title">Carrito.</h1>
-    `;
-    modalContainer.append(modalHeader);
-
-    const modalbutton = document.createElement("h1");
-    modalbutton.innerText = "x";
-    modalbutton.className = "modal-header-button";
-
-    modalbutton.addEventListener("click", () => {
-        modalContainer.style.display = "none";
-    });
-
-    modalHeader.append(modalbutton);
-
-    carrito.forEach((product) => {
-        let carritoContent = document.createElement("div")
-        carritoContent.className = "modal-content"
-        carritoContent.innerHTML = `
-        <img src="${product.img}">
-        <h3>${product.nombre}</h3>
-        <p>${product.precio} $</p>
-    `;
-
-        modalContainer.append(carritoContent)
-    });
-
-    const total = carrito.reduce((acc, el) => acc + el.precio, 0);
-
-    const totalBuying = document.createElement("div")
-    totalBuying.className = "total-content"
-    totalBuying.innerHTML = `total a pagar: ${total} $`;
-    modalContainer.append(totalBuying);
 });
 
 /*numeroDeCuotas(seleccioneProducto)
