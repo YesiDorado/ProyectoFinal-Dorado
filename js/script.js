@@ -11,7 +11,7 @@ const mailLogin = document.getElementById('emailLogin'),
 
 
 //Datos de usuario//
-function validarUsuario(usersDb, user, pass) {
+/*function validarUsuario(usersDb, user, pass) {
 
     let encontrado = usersDb.find(usersDb => usersDb.mail == user)
 
@@ -43,8 +43,7 @@ function recuperarUsuario(storage) {
 
 function saludar(usuario) {
     nombreusuario.innerHtml = 'Bienvenido/a, <span>${usuario.name}</span>'
-}
-
+}*/
 
 
 let carrito = [];
